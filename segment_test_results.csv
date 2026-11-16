@@ -1,0 +1,13 @@
+Finding tested,Test,p-value,Verdict,Detail
+Facility workload differs,"Chi-square, equal share",0.408,Not significant,range 225 to 290
+Facility ranking is stable,H1 vs H2 rank correlation,0.995,Unstable,correlation 0.00
+Department workload differs,Chi-square,0.49,Not significant,range 467 to 544
+Visit type mix,Chi-square,0.711,Not significant,
+Weekday pattern,Chi-square,0.693,Not significant,
+Monthly pattern,Chi-square,0.955,Not significant,range 400 to 440
+Emergency share by province,Province x visit type,0.949,Not significant,
+Satisfaction differs by facility,One-way ANOVA,0.554,Not significant,1756 linked ratings
+Satisfaction differs by department,One-way ANOVA,0.881,Not significant,1756 linked ratings
+Satisfaction differs by province,One-way ANOVA,0.823,Not significant,1756 linked ratings
+Patients differ by province,Chi-square,0.238,Not significant,
+Chronic rate differs by province,Chi-square,0.046,Borderline,one of many tests; may be chance
