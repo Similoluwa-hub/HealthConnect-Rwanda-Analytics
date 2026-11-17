@@ -87,82 +87,57 @@ Allocate staff by demand; add capacity at the busiest facilities; run a collecti
 *AnalystLab Africa Experience Lab. #AnalystLabAfrica*
 
 
-# HealthConnect-Rwanda-project-README
+# HealthConnect Rwanda: Weeks 7 and 8 (Testing, Refinement and Final Package)
 
-HealthConnect Rwanda: Healthcare Analytics & AI Transformation
-
-Project Overview
-
-HealthConnect Rwanda is a healthcare analytics project developed as part of the AnalystLab Africa Experience Lab Internship Programme, Data Analytics Track.
-
-The project explores how healthcare data can provide insights into patient care, clinical outcomes, financial performance, operational efficiency, and patient experience.
-
-By examining these areas, the project highlights the role of data analytics in understanding healthcare performance and supporting evidence-based decision-making.
-
-Project Focus
-
-* Patient demographics and clinical outcomes
-* Healthcare financial performance
-* Operational efficiency
-* Patient experience
-* Data-driven decision-making in healthcare
-
-Tools & Technologies
-
-* PostgreSQL
-* SQL
-* Microsoft Power BI
-
-About the Project
-
-This project reflects my ongoing learning journey in data analytics and my interest in applying analytical skills to real-world challenges in the healthcare sector.
-
-Acknowledgement
-
-Developed as part of the AnalystLab Africa Experience Lab Internship Programme, Data Analytics Track.
-
-## Week 8: Final Integration, Presentation & Project Showcase
-
-### Project Overview
-HealthConnect Rwanda is a healthcare analytics project focused on improving patient appointment attendance and healthcare support through data-driven insights and business intelligence.
-
-This project is part of the AnalystLab Africa Experience Lab Internship Programme, Data Analytics Track.
-
-### Week 8 Focus
-The final stage of the project focuses on integrating previous analytical contributions, refining dashboard development and preparing the project for professional presentation.
-
-### Dashboard Development
-The Power BI dashboard solution covers six analytical areas:
-
-1. Executive Overview
-2. Patient Analytics
-3. Clinical Analytics
-4. Financial Performance
-5. Operational Performance
-6. Patient Experience
-
-### Tools & Technologies
-- Power BI
-- PostgreSQL
-- SQL
-- Microsoft Excel
-
-### Project Resources
-- `HealthConnect_Appointment_Data.csv`
-- `HealthConnect_Data_Dictionary.xlsx`
-- `HealthConnect_Clinic_Knowledge_Base.docx`
-
-### Current Progress
-- Week 5 project activities completed and documented.
-- Week 6 dashboard development ongoing.
-- Week 7 testing and refinement ongoing.
-- Week 8 final integration and presentation preparation ongoing.
-
-### Project Objective
-To demonstrate how healthcare analytics and data-driven decision-making can support improved patient appointment management, operational efficiency and patient experiences.
-
-### Programme
-AnalystLab Africa Experience Lab Internship Programme  
+**Programme:** AnalystLab Africa Experience Lab
 **Track:** Data Analytics
+**Author:** Oluwayomi Precious Similoluwa
+**Builds on:** Week 6 (database, SQL and six-page Power BI dashboard)
 
-*Project development and final integration are ongoing.*
+## Week 7: Analytics Testing and Refinement
+
+The Week 6 outputs were tested for accuracy, consistency and usefulness.
+
+- **KPI and filter validation:** 36 checks compared Power BI values with independent SQL results (`Validation/KPI_Validation_Sheet.csv`). 34 matched at first; 2 failed and passed after a fix.
+- **Issue found and fixed:** an appointment's recorded facility matches the facility that owns its department in only 5.1% of records. SQL used the recorded facility and Power BI used the department's. The SQL views were redefined to use the department's facility, and the retest matched (HF004: 290 appointments).
+- **Dashboard refinements (before and after):** unlinked (Blank) bars removed from revenue charts; months sorted by calendar order; rates shown as percentages; revenue cards shown in billions; an uninformative chart replaced with appointments per staff member; a confusing slicer replaced.
+- **Segment testing:** 12 statistical tests (`Validation/week7_segment_tests.py`, results in `Validation/segment_test_results.csv`) showed that differences between facilities, departments, months and satisfaction scores are within random variation. Rankings are therefore treated as descriptive only, and earlier recommendations based on them were withdrawn.
+
+Report: *HealthConnect Analytics Testing and Refinement Report (Week 7)*.
+
+## Week 8: Final Analytics and Decision Support Package
+
+- Week 7 to Week 8 transition note and final integration readiness table.
+- Final KPIs, validated findings, insights, ten prioritised recommendations and limitations.
+- Executive presentation: `HealthConnect_Week8_Presentation.pptx` (14 slides).
+
+Report: *HealthConnect Final Analytics and Decision Support Package (Week 8)*.
+
+## Main conclusions
+
+1. About 920 million (9.9%) of billing is uncollected, and about half of insurance claims are pending.
+2. The population is older and chronically ill (27% over 65; 74.6% with a chronic condition).
+3. Satisfaction averages 2.99 out of 5 with no significant difference by facility, department or province.
+4. Staffing, beds and equipment are identical across facilities, and appointment differences are not beyond chance.
+5. Missed appointments cannot be measured: the data has no attendance, cancellation or no-show field. Recording it is the first recommendation.
+
+## Limitations
+
+- No attendance, cancellation, admission, laboratory, prescription or referral data.
+- Splits by facility, department and month use only about 8% of records that link to an appointment.
+- Facilities are IDs only; the department's facility is used for facility analysis.
+- The forecast is illustrative; the decomposition tree was not completed.
+- No cross-track testing has been carried out; findings are ready to share with other tracks.
+
+## Suggested repository additions
+
+```
+Week7_Week8/
+├── Reports/       Week 7 report, Week 8 package (PDF or Word)
+├── Presentation/  HealthConnect_Week8_Presentation.pptx
+├── Validation/    KPI_Validation_Sheet.csv, week7_segment_tests.py, segment_test_results.csv
+├── SQL/           healthconnect_queries.sql (updated), fix_views.sql
+└── README.md
+```
+
+*AnalystLab Africa Experience Lab. #AnalystLabAfrica*
